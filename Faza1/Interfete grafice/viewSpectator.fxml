@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.Pane?>
+
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="594.0" prefWidth="826.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <TableView layoutX="14.0" layoutY="22.0" prefHeight="543.0" prefWidth="395.0">
+        <columns>
+          <TableColumn prefWidth="104.0" text="Cod rezervare" />
+          <TableColumn prefWidth="145.60003662109375" text="Numar bilete cumparate" />
+            <TableColumn prefWidth="145.60003662109375" text="Nume spectacol" />
+        </columns>
+      </TableView>
+      <Button layoutX="436.0" layoutY="100.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="150.0" text="Modifica rezervare" />
+      <Label layoutX="436.0" layoutY="52.0" text="Numar bilete cumparate" />
+      <TextField layoutX="575.0" layoutY="48.0" />
+      <ComboBox layoutX="436.0" layoutY="148.0" prefWidth="150.0" promptText="Vizualizare piese" />
+      <Label layoutX="436.0" layoutY="288.0" text="Nume spectacol selectat" />
+      <TextField layoutX="575.0" layoutY="286.0" />
+      <Label layoutX="436.0" layoutY="341.0" text="Rand" />
+      <TextField layoutX="483.0" layoutY="336.0" />
+      <TextField layoutX="483.0" layoutY="376.0" />
+      <Label layoutX="435.0" layoutY="381.0" text="Loja" />
+      <Button layoutX="451.0" layoutY="439.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="187.0" text="Cumparare bilet" />
+      <TextArea layoutX="602.0" layoutY="187.0" prefHeight="81.0" prefWidth="200.0" />
+      <Label layoutX="428.0" layoutY="207.0" text="Vizualizare detalii piesa selectata" />
+   </children>
+</Pane>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.Pane?>
+
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="512.0" prefWidth="675.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <Button layoutX="53.0" layoutY="48.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="178.0" text="Vizualizare piese" />
+      <Label layoutX="53.0" layoutY="136.0" prefHeight="17.0" prefWidth="140.0" text="Nume piesa" />
+      <TextField layoutX="163.0" layoutY="132.0" />
+      <Label layoutX="53.0" layoutY="200.0" text="Data piesa" />
+      <TextField layoutX="163.0" layoutY="205.0" />
+      <Label layoutX="53.0" layoutY="267.0" prefHeight="17.0" prefWidth="66.0" text="Gen piesa" />
+      <TextField layoutX="164.0" layoutY="263.0" />
+      <Label layoutX="53.0" layoutY="343.0" text="Numar locuri disponibile" />
+      <TextField layoutX="204.0" layoutY="339.0" />
+      <Button layoutX="55.0" layoutY="422.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="149.0" text="Adaugare piesa" />
+      <Button layoutX="252.0" layoutY="422.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="149.0" text="Modificare detalii piesa" />
+      <Button layoutX="450.0" layoutY="422.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="149.0" text="Sterge piesa" />
+   </children>
+</Pane>
