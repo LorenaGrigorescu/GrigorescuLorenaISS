@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+
+
+<AnchorPane prefHeight="649.0" prefWidth="1006.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.spectacole_iss.controller.SpectacolController">
+   <children>
+      <Label layoutX="714.0" layoutY="21.0" prefHeight="18.0" prefWidth="124.0" text="Nume spectacol" />
+      <TableView fx:id="spectacoleTableView" layoutX="14.0" layoutY="21.0" onMouseClicked="#selecteazaSpectacol" prefHeight="611.0" prefWidth="670.0">
+        <columns>
+          <TableColumn fx:id="numeColumn" prefWidth="112.79995441436768" text="Nume" />
+          <TableColumn fx:id="durataColumn" prefWidth="57.5999755859375" text="Durata" />
+            <TableColumn fx:id="startColumn" prefWidth="140.00001525878906" text="Start" />
+            <TableColumn fx:id="locuriColumn" prefWidth="93.5999755859375" text="Numar locuri" />
+            <TableColumn fx:id="descriereColumn" prefWidth="174.4000244140625" text="Descriere" />
+            <TableColumn fx:id="genColumn" prefWidth="86.40008544921875" text="Gen" />
+        </columns>
+      </TableView>
+      <TextField fx:id="numeTF" layoutX="823.0" layoutY="17.0" prefHeight="26.0" prefWidth="124.0" />
+      <Label layoutX="707.0" layoutY="68.0" text="Durata spectacol" />
+      <TextField fx:id="durataTF" layoutX="820.0" layoutY="63.0" prefHeight="26.0" prefWidth="132.0" />
+      <Label layoutX="707.0" layoutY="119.0" text="Data spectacol" />
+      <TextField fx:id="dataTF" layoutX="819.0" layoutY="112.0" prefHeight="26.0" prefWidth="132.0" />
+      <Label layoutX="714.0" layoutY="159.0" text="Ora spectacol" />
+      <TextField fx:id="oraTF" layoutX="819.0" layoutY="154.0" prefHeight="26.0" prefWidth="132.0" />
+      <Label layoutX="694.0" layoutY="201.0" text="Descriere spectacol" />
+      <TextField fx:id="descriereTF" layoutX="821.0" layoutY="205.0" prefHeight="26.0" prefWidth="132.0" />
+      <Label layoutX="708.0" layoutY="262.0" text="Gen spectacol" />
+      <TextField fx:id="genTF" layoutX="819.0" layoutY="258.0" prefHeight="26.0" prefWidth="132.0" />
+      <Button fx:id="modificaButton" layoutX="705.0" layoutY="513.0" mnemonicParsing="false" onAction="#onModificaSpectacol" prefHeight="26.0" prefWidth="180.0" text="Modifica" />
+      <Button fx:id="adaugaButton" layoutX="716.0" layoutY="354.0" mnemonicParsing="false" onAction="#onAdaugaSpectacol" prefHeight="26.0" prefWidth="180.0" text="Adauga" />
+      <Label layoutX="686.0" layoutY="307.0" text="Numar locuri spectacol" />
+      <TextField fx:id="locuriTF" layoutX="817.0" layoutY="303.0" prefHeight="26.0" prefWidth="139.0" />
+      <TextField fx:id="newDataTF" layoutX="817.0" layoutY="415.0" prefHeight="26.0" prefWidth="122.0" />
+      <TextField fx:id="newOraTF" layoutX="817.0" layoutY="464.0" prefHeight="26.0" prefWidth="122.0" />
+      <Label layoutX="697.0" layoutY="420.0" text="Data noua spectacol" />
+      <Label layoutX="702.0" layoutY="468.0" prefHeight="18.0" prefWidth="89.0" text="Ora noua spectacol " />
+   </children>
+</AnchorPane>
