@@ -37,38 +37,33 @@ public class LogInController {
 
         String username = usernameField.getText();
         String parola = parolaField.getText();
-        User.Type option=null;
-        if(managerRB.isSelected())
-        {
+        User.Type option = null;
+        if (managerRB.isSelected()) {
             option = User.Type.MANAGER;
-        }
-        else if(spectatorRB.isSelected()){
+        } else if (spectatorRB.isSelected()) {
             option = User.Type.SPECTATOR;
         }
         System.out.println(option);
-        if(username == "" || username == null || parola == "" || parola == null)
-        {
+        if (username == "" || username == null || parola == "" || parola == null) {
             Alert alert = new Alert(Alert.AlertType.ERROR, "Username sau parola invalide!\n");
             alert.showAndWait();
             return;
         }
-        if(option == null)
-        {
+        if (option == null) {
             Alert alert = new Alert(Alert.AlertType.ERROR, "Trebuie sa bifati una din optiunile de mai jos!\n");
             alert.showAndWait();
             return;
         }
 
         User loggedUser = this.service.cautaUser(username, parola, option);
-        if(loggedUser == null) {
+        if (loggedUser == null) {
             Alert alert = new Alert(Alert.AlertType.ERROR, "User inexistent!\n");
             alert.showAndWait();
             return;
-        }
-        else if(loggedUser!=null && loggedUser.getType()==User.Type.MANAGER){
+        } else if (loggedUser != null && loggedUser.getType() == User.Type.MANAGER) {
             Alert alert = new Alert(Alert.AlertType.CONFIRMATION, "Logare efectuata cu succes!\n");
             alert.showAndWait();
-            try{
+            try {
                 FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("spectacole.fxml"));
                 Scene scene = new Scene(fxmlLoader.load(), 850, 700);
                 SpectacolController controller = fxmlLoader.getController();
@@ -77,19 +72,39 @@ public class LogInController {
                 stage.setScene(scene);
                 stage.show();
                 return;
-            }catch (IOException ioException)
-            {
+            } catch (IOException ioException) {
                 alert = new Alert(Alert.AlertType.ERROR);
                 alert.setTitle("Error!");
                 alert.setHeaderText("An error has occurred!");
                 alert.setContentText(ioException.getMessage());
                 alert.showAndWait();
             }
-        }else {
+        } else if (loggedUser != null && loggedUser.getType() == User.Type.SPECTATOR) {
+            //TODO : instantiaza controller ul de spectator
+            Alert alert = new Alert(Alert.AlertType.CONFIRMATION, "Logare efectuata cu succes!\n");
+            alert.showAndWait();
+            try {
+                FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("spectator.fxml"));
+                Scene scene = new Scene(fxmlLoader.load(), 850, 700);
+                SpectatorController controller = fxmlLoader.getController();
+                controller.setLoggedUserID(loggedUser.getId());
+                controller.setService(this.service);
+                Stage stage = new Stage();
+                stage.setScene(scene);
+                stage.show();
+                return;
+            } catch (IOException ioException) {
+                alert = new Alert(Alert.AlertType.ERROR);
+                alert.setTitle("Error!");
+                alert.setHeaderText("An error has occurred!");
+                alert.setContentText(ioException.getMessage());
+                alert.showAndWait();
+            }
+        } else {
             Alert alert = new Alert(Alert.AlertType.ERROR);
             alert.setTitle("Error!");
             alert.setHeaderText("An error has occurred!");
-            alert.setContentText("Santier in lucru!");
+            alert.setContentText("Eroare!");
             alert.showAndWait();
         }
 

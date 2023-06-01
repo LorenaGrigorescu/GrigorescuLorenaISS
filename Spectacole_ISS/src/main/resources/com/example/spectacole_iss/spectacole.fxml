@@ -4,14 +4,14 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextArea?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
-
 
 <AnchorPane prefHeight="649.0" prefWidth="1006.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.spectacole_iss.controller.SpectacolController">
    <children>
       <Label layoutX="714.0" layoutY="21.0" prefHeight="18.0" prefWidth="124.0" text="Nume spectacol" />
-      <TableView fx:id="spectacoleTableView" layoutX="14.0" layoutY="21.0" onMouseClicked="#selecteazaSpectacol" prefHeight="611.0" prefWidth="670.0">
+      <TableView fx:id="spectacoleTableView" layoutX="14.0" layoutY="21.0" onMouseClicked="#selecteazaSpectacol" prefHeight="441.0" prefWidth="670.0">
         <columns>
           <TableColumn fx:id="numeColumn" prefWidth="112.79995441436768" text="Nume" />
           <TableColumn fx:id="durataColumn" prefWidth="57.5999755859375" text="Durata" />
@@ -40,5 +40,11 @@
       <TextField fx:id="newOraTF" layoutX="817.0" layoutY="464.0" prefHeight="26.0" prefWidth="122.0" />
       <Label layoutX="697.0" layoutY="420.0" text="Data noua spectacol" />
       <Label layoutX="702.0" layoutY="468.0" prefHeight="18.0" prefWidth="89.0" text="Ora noua spectacol " />
+      <Label layoutX="699.0" layoutY="562.0" prefHeight="18.0" prefWidth="122.0" text="Filtreaza dupa zile" />
+      <TextField fx:id="dataFiltruTF" layoutX="701.0" layoutY="586.0" />
+      <Button layoutX="870.0" layoutY="586.0" mnemonicParsing="false" onAction="#onFiltreazaSpectacole" text="Cauta" />
+      <Label layoutX="56.0" layoutY="505.0" text="Vizualizare descriere spectacol" />
+      <TextArea fx:id="descriereTA" layoutX="249.0" layoutY="490.0" prefHeight="52.0" prefWidth="298.0" />
+      <Button layoutX="477.0" layoutY="586.0" mnemonicParsing="false" onAction="#onStergeSpectacol" prefHeight="26.0" prefWidth="122.0" text="Sterge" />
    </children>
 </AnchorPane>

@@ -19,10 +19,8 @@ public class HelloApplication extends Application {
     @Override
     public void start(Stage primaryStage) throws IOException {
         FXMLLoader loader = new FXMLLoader(HelloApplication.class.getResource("login.fxml"));
-//        FXMLLoader Sloader = new FXMLLoader(HelloApplication.class.getResource("spectacole.fxml"));
         Parent root = loader.load();
         LogInController controller = loader.getController();
-//        SpectacolController spectacolController = Sloader.getController();
         Properties properties = new Properties();
         try {
             properties.load(new FileReader("D:\\Anul 2-FMI UBB Cluj\\Semestru 2\\Ingineria Sistemelor Soft\\Spectacole_ISS\\src\\main\\resources\\bd.config"));
@@ -33,7 +31,6 @@ public class HelloApplication extends Application {
         SpectacolDBRepository spectacolRepository = new SpectacolDBRepository(properties);
         Service service = new Service(spectacolRepository, userRepository);
         controller.setService(service);
-//        spectacolController.setService(service);
         Scene scene = new Scene(root);
         primaryStage.setScene(scene);
         primaryStage.setTitle("LogIn!");

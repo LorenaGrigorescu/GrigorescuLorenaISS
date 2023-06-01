@@ -110,4 +110,49 @@ public class SpectacolDBRepository {
         }
         return spectacole;
     }
+
+    public List<Spectacol>spectacolePeZile(String dataSpectacol)
+    {
+        Connection connection = jdbcUtils.getConnection();
+        List<Spectacol> spectacole = new ArrayList<>();
+        try(PreparedStatement preparedStatement = connection.prepareStatement("select id, durata,nume, descriere, start, gen, locuri  from spectacole where start like ?"))
+        {
+            preparedStatement.setString(1, dataSpectacol + "%");
+            try(ResultSet resultSet = preparedStatement.executeQuery())
+            {
+                while (resultSet.next())
+                {
+                    int id = resultSet.getInt(1);
+                    int durata = resultSet.getInt(2);
+                    String nume = resultSet.getString(3);
+                    String descriere = resultSet.getString(4);
+                    String start = resultSet.getString(5);
+                    Spectacol.Gen gen = Spectacol.Gen.valueOf(resultSet.getString(6));
+                    int locuri = resultSet.getInt(7);
+                    Spectacol spectacol = new Spectacol(id, nume, durata, start, locuri, descriere, gen);
+                    spectacole.add(spectacol);
+                }
+                return spectacole;
+            }
+        }catch(SQLException sqlException)
+        {
+            System.out.println(sqlException);
+        }
+        return spectacole;
+    }
+
+    public Spectacol stergeSpectacol(Spectacol spectacol) {
+        Connection connection = jdbcUtils.getConnection();
+        try(PreparedStatement preparedStatement = connection.prepareStatement("delete from spectacole where nume = ? and start=?"))
+        {
+            preparedStatement.setString(1, spectacol.getNume());
+            preparedStatement.setString(2, spectacol.getStart());
+            int result = preparedStatement.executeUpdate();
+            return  spectacol;
+        }catch (SQLException sqlException)
+        {
+            System.out.println(sqlException);
+        }
+        return null;
+    }
 }
